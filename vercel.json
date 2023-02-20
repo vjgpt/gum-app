@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "apps/gum-app",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist/apps/gum-app"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/apps/gum-app/$1",
+      "headers": {
+        "Cache-Control": "max-age=0"
+      }
+    }
+  ]
+}

@@ -12,6 +12,8 @@ export function GumUserCreateButton() {
     console.error(error)
     return <UiError error={error} />
   }
+  
+  console.log(`Owner: ${owner}`);
 
   return (
     <Button size="md" radius="xl" loading={loading} onClick={() => create(owner).then(() => refresh())}>
